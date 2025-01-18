@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\firstkpoproject\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|solutionrelative:car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\firstkpoproject\\factoryaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|solutionrelative:factoryaf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\firstkpoproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\firstkpoproject\\engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|solutionrelative:engine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\firstkpoproject\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E61B5BB0-3660-4A1D-BFEB-85814D6F70BE}|FirstKPOProject.csproj|solutionrelative:customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6074DA29-9C04-444B-A5FD-92DC9DBF7F4D}|Solution Items{6074DA29-9C04-444B-A5FD-92DC9DBF7F4D}|D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\.editorconfig||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{6074DA29-9C04-444B-A5FD-92DC9DBF7F4D}|Solution Items{6074DA29-9C04-444B-A5FD-92DC9DBF7F4D}|solutionrelative:.editorconfig||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\firstkpoproject\\classdiagram2.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClassDiagram2.cd",
+              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\FirstKPOProject\\ClassDiagram2.cd",
+              "RelativeDocumentMoniker": "..\\..\\FirstKPOProject\\ClassDiagram2.cd",
+              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\FirstKPOProject\\ClassDiagram2.cd",
+              "RelativeToolTip": "..\\..\\FirstKPOProject\\ClassDiagram2.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2025-01-14T23:41:52.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FactoryAF.cs",
+              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\FactoryAF.cs",
+              "RelativeDocumentMoniker": "FactoryAF.cs",
+              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\FactoryAF.cs",
+              "RelativeToolTip": "FactoryAF.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T12:44:51.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\Customer.cs",
+              "RelativeDocumentMoniker": "Customer.cs",
+              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\Customer.cs",
+              "RelativeToolTip": "Customer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAwAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T12:43:27.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Car.cs",
+              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\Car.cs",
+              "RelativeDocumentMoniker": "Car.cs",
+              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\Car.cs",
+              "RelativeToolTip": "Car.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAMAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T12:40:32.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Engine.cs",
+              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\Engine.cs",
+              "RelativeDocumentMoniker": "Engine.cs",
+              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\Engine.cs",
+              "RelativeToolTip": "Engine.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T12:36:59.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-11T12:32:35.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": ".editorconfig",
+              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\.editorconfig",
+              "RelativeDocumentMoniker": ".editorconfig",
+              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\FirstKPOProject\\.editorconfig",
+              "RelativeToolTip": ".editorconfig",
+              "ViewState": "AQIAANUAAAAAAAAAAAAAAMYAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-01-11T13:47:54.174Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

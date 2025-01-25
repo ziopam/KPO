@@ -1,0 +1,15 @@
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\SecondKPOProject.GeneratedMSBuildEditorConfig.editorconfig
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\SecondKPOProject.AssemblyInfoInputs.cache
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\SecondKPOProject.AssemblyInfo.cs
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\SecondKPOProject.csproj.CoreCompileInputs.cache
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\SecondKPOProject.sourcelink.json
+D:\C# проекты\KPO\SecondKPOProject\bin\Debug\net8.0\SecondKPOProject.exe
+D:\C# проекты\KPO\SecondKPOProject\bin\Debug\net8.0\SecondKPOProject.deps.json
+D:\C# проекты\KPO\SecondKPOProject\bin\Debug\net8.0\SecondKPOProject.runtimeconfig.json
+D:\C# проекты\KPO\SecondKPOProject\bin\Debug\net8.0\SecondKPOProject.dll
+D:\C# проекты\KPO\SecondKPOProject\bin\Debug\net8.0\SecondKPOProject.pdb
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\SecondKPOProject.dll
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\refint\SecondKPOProject.dll
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\SecondKPOProject.pdb
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\SecondKPOProject.genruntimeconfig.cache
+D:\C# проекты\KPO\SecondKPOProject\obj\Debug\net8.0\ref\SecondKPOProject.dll

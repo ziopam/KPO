@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.8109000000000001" branch-rate="0.375" version="1.9" timestamp="1739287354" lines-covered="266" lines-valid="328" branches-covered="6" branches-valid="16">
+<coverage line-rate="0.8109000000000001" branch-rate="0.375" version="1.9" timestamp="1739288028" lines-covered="266" lines-valid="328" branches-covered="6" branches-valid="16">
   <sources>
-    <source>D:\C# проекты\KPO\</source>
+    <source>D:\C# проекты\KPO\MiniDZ1\</source>
     <source>C:\</source>
   </sources>
   <packages>

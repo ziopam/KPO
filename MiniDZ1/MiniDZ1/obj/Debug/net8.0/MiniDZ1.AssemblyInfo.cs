@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniDZ1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c75a995a9ffea88bfb5020edf9d0400856a1589a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c2619b48f7e6833270655c7248aca4bf6254ee9")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniDZ1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniDZ1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

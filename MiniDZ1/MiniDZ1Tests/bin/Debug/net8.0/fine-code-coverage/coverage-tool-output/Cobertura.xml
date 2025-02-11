@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage line-rate="0.810975609756098" branch-rate="0.375" lines-covered="266" lines-valid="328" branches-covered="6" branches-valid="16" complexity="63" version="0" timestamp="1739298155">
+<coverage line-rate="0.810975609756098" branch-rate="0.375" lines-covered="266" lines-valid="328" branches-covered="6" branches-valid="16" complexity="63" version="0" timestamp="1739298829">
   <sources>
-    <source>D:\C# проекты\KPO\</source>
+    <source>D:\C# проекты\KPO\MiniDZ1\</source>
     <source>C:\</source>
   </sources>
   <packages>
     <package name="MiniDZ1" line-rate="0.658064516129032" branch-rate="0.375" complexity="46">
       <classes>
-        <class name="MiniDZ1.Animals.Animal" filename="D:\C# проекты\KPO\MiniDZ1\Animals\Animal.cs" line-rate="1" branch-rate="1" complexity="6">
+        <class name="MiniDZ1.Animals.Animal" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Animals\Animal.cs" line-rate="1" branch-rate="1" complexity="6">
           <methods>
             <method name="get_SpecieName" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -50,7 +50,7 @@
             <line number="9" hits="102" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Animals.Herbo" filename="D:\C# проекты\KPO\MiniDZ1\Animals\Herbo.cs" line-rate="1" branch-rate="1" complexity="5">
+        <class name="MiniDZ1.Animals.Herbo" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Animals\Herbo.cs" line-rate="1" branch-rate="1" complexity="5">
           <methods>
             <method name="get_Kindness" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -100,7 +100,7 @@
             <line number="25" hits="3" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Animals.Monkey" filename="D:\C# проекты\KPO\MiniDZ1\Animals\Monkey.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="MiniDZ1.Animals.Monkey" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Animals\Monkey.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -118,7 +118,7 @@
             <line number="8" hits="4" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Animals.Predator" filename="D:\C# проекты\KPO\MiniDZ1\Animals\Predator.cs" line-rate="1" branch-rate="1" complexity="4">
+        <class name="MiniDZ1.Animals.Predator" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Animals\Predator.cs" line-rate="1" branch-rate="1" complexity="4">
           <methods>
             <method name="get_Aggressiveness" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -158,7 +158,7 @@
             <line number="19" hits="3" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Animals.Rabbit" filename="D:\C# проекты\KPO\MiniDZ1\Animals\Rabbit.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="MiniDZ1.Animals.Rabbit" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Animals\Rabbit.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -176,7 +176,7 @@
             <line number="8" hits="4" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Animals.Tiger" filename="D:\C# проекты\KPO\MiniDZ1\Animals\Tiger.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="MiniDZ1.Animals.Tiger" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Animals\Tiger.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -194,7 +194,7 @@
             <line number="8" hits="4" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Animals.Wolf" filename="D:\C# проекты\KPO\MiniDZ1\Animals\Wolf.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="MiniDZ1.Animals.Wolf" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Animals\Wolf.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -212,7 +212,7 @@
             <line number="8" hits="4" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.HealthCheckers.VeterinaryClinic" filename="D:\C# проекты\KPO\MiniDZ1\HealthCheckers\VeterinaryClinic.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="MiniDZ1.HealthCheckers.VeterinaryClinic" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\HealthCheckers\VeterinaryClinic.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="IsHealthy" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -228,7 +228,7 @@
             <line number="10" hits="6" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Program" filename="D:\C# проекты\KPO\MiniDZ1\Program.cs" line-rate="0" branch-rate="0" complexity="10">
+        <class name="MiniDZ1.Program" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Program.cs" line-rate="0" branch-rate="0" complexity="10">
           <methods>
             <method name="Main" signature="()" line-rate="0" branch-rate="0" complexity="10">
               <lines>
@@ -344,7 +344,7 @@
             <line number="80" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Things.Computer" filename="D:\C# проекты\KPO\MiniDZ1\Things\Computer.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="MiniDZ1.Things.Computer" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Things\Computer.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -362,7 +362,7 @@
             <line number="8" hits="1" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Things.Table" filename="D:\C# проекты\KPO\MiniDZ1\Things\Table.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="MiniDZ1.Things.Table" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Things\Table.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -380,7 +380,7 @@
             <line number="8" hits="1" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Things.Thing" filename="D:\C# проекты\KPO\MiniDZ1\Things\Thing.cs" line-rate="1" branch-rate="1" complexity="3">
+        <class name="MiniDZ1.Things.Thing" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Things\Thing.cs" line-rate="1" branch-rate="1" complexity="3">
           <methods>
             <method name="get_Number" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -408,7 +408,7 @@
             <line number="11" hits="3" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1.Zoo" filename="D:\C# проекты\KPO\MiniDZ1\Zoo.cs" line-rate="1" branch-rate="1" complexity="11">
+        <class name="MiniDZ1.Zoo" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1\Zoo.cs" line-rate="1" branch-rate="1" complexity="11">
           <methods>
             <method name="get_NextNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -548,7 +548,7 @@
             <line number="4" hits="0" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1Tests.HerboTests" filename="D:\C# проекты\KPO\MiniDZ1Tests\HerboTests.cs" line-rate="0.818181818181818" branch-rate="1" complexity="3">
+        <class name="MiniDZ1Tests.HerboTests" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1Tests\HerboTests.cs" line-rate="0.818181818181818" branch-rate="1" complexity="3">
           <methods>
             <method name="HerboConstructor_ValidKindness_CreatesInstance" signature="(...)" line-rate="0.555555555555556" branch-rate="1" complexity="1">
               <lines>
@@ -610,7 +610,7 @@
             <line number="52" hits="3" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1Tests.PredatorTests" filename="D:\C# проекты\KPO\MiniDZ1Tests\PredatorTests.cs" line-rate="0.818181818181818" branch-rate="1" complexity="3">
+        <class name="MiniDZ1Tests.PredatorTests" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1Tests\PredatorTests.cs" line-rate="0.818181818181818" branch-rate="1" complexity="3">
           <methods>
             <method name="PredatorConstructor_ValidAggressiveness_CreatesInstance" signature="(...)" line-rate="0.555555555555556" branch-rate="1" complexity="1">
               <lines>
@@ -672,7 +672,7 @@
             <line number="52" hits="3" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1Tests.ThingTests" filename="D:\C# проекты\KPO\MiniDZ1Tests\ThingTests.cs" line-rate="1" branch-rate="1" complexity="1">
+        <class name="MiniDZ1Tests.ThingTests" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1Tests\ThingTests.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="ToString_ReturnsCorrectString" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -694,7 +694,7 @@
             <line number="21" hits="3" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1Tests.VeterinaryClinicTests" filename="D:\C# проекты\KPO\MiniDZ1Tests\VeterinaryClinicTests.cs" line-rate="1" branch-rate="1" complexity="2">
+        <class name="MiniDZ1Tests.VeterinaryClinicTests" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1Tests\VeterinaryClinicTests.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="IsHealthy_HealthGreaterThan5_ReturnsTrue" signature="(...)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -732,7 +732,7 @@
             <line number="41" hits="3" branch="false" />
           </lines>
         </class>
-        <class name="MiniDZ1Tests.ZooTests" filename="D:\C# проекты\KPO\MiniDZ1Tests\ZooTests.cs" line-rate="1" branch-rate="1" complexity="7">
+        <class name="MiniDZ1Tests.ZooTests" filename="D:\C# проекты\KPO\MiniDZ1\MiniDZ1Tests\ZooTests.cs" line-rate="1" branch-rate="1" complexity="7">
           <methods>
             <method name="AddAnimal_HealthyAnimal_AddedToZoo" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>

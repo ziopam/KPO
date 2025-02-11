@@ -1,62 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\",
+  "WorkspaceRootPath": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\MiniDZ1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\readme.md||{24510B54-A648-4D69-A6C5-F68CBDF07546}",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:readme.md||{24510B54-A648-4D69-A6C5-F68CBDF07546}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FDAF9A8-F8EB-4719-8760-6F68C6301DE4}|..\\MiniDZ1Tests\\MiniDZ1Tests.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1tests\\veterinaryclinictests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FDAF9A8-F8EB-4719-8760-6F68C6301DE4}|..\\MiniDZ1Tests\\MiniDZ1Tests.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1tests\\thingtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\animals\\predator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:animals\\predator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\minidz1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\things\\thing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:things\\thing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FDAF9A8-F8EB-4719-8760-6F68C6301DE4}|..\\MiniDZ1Tests\\MiniDZ1Tests.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1tests\\herbotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FDAF9A8-F8EB-4719-8760-6F68C6301DE4}|..\\MiniDZ1Tests\\MiniDZ1Tests.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1tests\\minidz1tests.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\healthcheckers\\veterinaryclinic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:healthcheckers\\veterinaryclinic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\animals\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:animals\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\healthcheckers\\ianimalhealthchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:healthcheckers\\ianimalhealthchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\minidz1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:minidz1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\things\\computer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:things\\computer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\things\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:things\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|d:\\c# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\kpo\\minidz1\\animals\\monkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{068FA099-1BAF-4087-BA90-381829CFE2F4}|MiniDZ1.csproj|solutionrelative:animals\\monkey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -71,24 +19,10 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "README.md",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\README.md",
-              "RelativeDocumentMoniker": "README.md",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\README.md",
-              "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAAAKwAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-02-09T17:55:04.686Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Program.cs",
+              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\MiniDZ1\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Program.cs",
+              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\MiniDZ1\\Program.cs",
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -97,199 +31,8 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ThingTests.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1Tests\\ThingTests.cs",
-              "RelativeDocumentMoniker": "..\\MiniDZ1Tests\\ThingTests.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1Tests\\ThingTests.cs",
-              "RelativeToolTip": "..\\MiniDZ1Tests\\ThingTests.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAA4wBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T15:03:44.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Predator.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Animals\\Predator.cs",
-              "RelativeDocumentMoniker": "Animals\\Predator.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Animals\\Predator.cs",
-              "RelativeToolTip": "Animals\\Predator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T14:58:00.772Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "VeterinaryClinicTests.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1Tests\\VeterinaryClinicTests.cs",
-              "RelativeDocumentMoniker": "..\\MiniDZ1Tests\\VeterinaryClinicTests.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1Tests\\VeterinaryClinicTests.cs",
-              "RelativeToolTip": "..\\MiniDZ1Tests\\VeterinaryClinicTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T14:53:25.925Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Thing.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Things\\Thing.cs",
-              "RelativeDocumentMoniker": "Things\\Thing.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Things\\Thing.cs",
-              "RelativeToolTip": "Things\\Thing.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T10:30:59.665Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HerboTests.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1Tests\\HerboTests.cs",
-              "RelativeDocumentMoniker": "..\\MiniDZ1Tests\\HerboTests.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1Tests\\HerboTests.cs",
-              "RelativeToolTip": "..\\MiniDZ1Tests\\HerboTests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-11T14:06:09.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MiniDZ1Tests.csproj",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1Tests\\MiniDZ1Tests.csproj",
-              "RelativeDocumentMoniker": "..\\MiniDZ1Tests\\MiniDZ1Tests.csproj",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1Tests\\MiniDZ1Tests.csproj",
-              "RelativeToolTip": "..\\MiniDZ1Tests\\MiniDZ1Tests.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-10T12:45:33.349Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Animal.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Animals\\Animal.cs",
-              "RelativeDocumentMoniker": "Animals\\Animal.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Animals\\Animal.cs",
-              "RelativeToolTip": "Animals\\Animal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T10:30:35.154Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IAnimalHealthChecker.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\HealthCheckers\\IAnimalHealthChecker.cs",
-              "RelativeDocumentMoniker": "HealthCheckers\\IAnimalHealthChecker.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\HealthCheckers\\IAnimalHealthChecker.cs",
-              "RelativeToolTip": "HealthCheckers\\IAnimalHealthChecker.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T13:37:33.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MiniDZ1.csproj",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\MiniDZ1.csproj",
-              "RelativeDocumentMoniker": "MiniDZ1.csproj",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\MiniDZ1.csproj",
-              "RelativeToolTip": "MiniDZ1.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-02-10T12:43:05.395Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Computer.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Things\\Computer.cs",
-              "RelativeDocumentMoniker": "Things\\Computer.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Things\\Computer.cs",
-              "RelativeToolTip": "Things\\Computer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T13:43:54.65Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Table.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Things\\Table.cs",
-              "RelativeDocumentMoniker": "Things\\Table.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Things\\Table.cs",
-              "RelativeToolTip": "Things\\Table.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T10:31:07.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Monkey.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Animals\\Monkey.cs",
-              "RelativeDocumentMoniker": "Animals\\Monkey.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\Animals\\Monkey.cs",
-              "RelativeToolTip": "Animals\\Monkey.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T10:30:50.434Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "4337bf4b-d68e-4f8e-bb28-febe9aafd968",
-        "Display": 1,
-        "X": 534,
-        "Y": 175,
-        "Width": 1029,
-        "Height": 565,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "VeterinaryClinic.cs",
-              "DocumentMoniker": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\HealthCheckers\\VeterinaryClinic.cs",
-              "RelativeDocumentMoniker": "HealthCheckers\\VeterinaryClinic.cs",
-              "ToolTip": "D:\\C# \u043F\u0440\u043E\u0435\u043A\u0442\u044B\\KPO\\MiniDZ1\\HealthCheckers\\VeterinaryClinic.cs",
-              "RelativeToolTip": "HealthCheckers\\VeterinaryClinic.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T13:38:47.243Z",
-              "EditorCaption": ""
             }
           ]
         }

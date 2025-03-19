@@ -1,10 +1,10 @@
-﻿namespace KR1.Console_Interface
+﻿namespace KR1.Console_Interface.Menus
 {
     internal class Menu
     {
         public string Header { get; set; } = "Выберите действие:";
 
-        private readonly List<MenuItem> _items = new List<MenuItem>();
+        private readonly List<MenuItem> _items = [];
         private int _selectedIndex = 0;
 
 
@@ -13,9 +13,10 @@
             _items.Add(item);
         }
 
-        public void Display()
+        public int Display()
         {
             ConsoleKey key;
+            _selectedIndex = 0;
             do
             {
                 Console.Clear();
@@ -44,10 +45,10 @@
                         _selectedIndex = (_selectedIndex + 1) % _items.Count;
                         break;
                     case ConsoleKey.Enter:
-                        _items[_selectedIndex].Command.Execute();
-                        break;
+                        _items[_selectedIndex].Command?.Execute();
+                        return _selectedIndex;
                 }
-            } while (key != ConsoleKey.Enter);
+            } while (true);
         }
     }
 }

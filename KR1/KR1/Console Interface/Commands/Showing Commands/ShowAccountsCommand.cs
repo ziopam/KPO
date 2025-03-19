@@ -1,6 +1,8 @@
 ﻿namespace KR1.Console_Interface.Commands
 {
+    using ConsoleTables;
     using KR1.Database;
+
     internal class ShowAccountsCommand(IFinanceDatabase financeDatabase) : ICommand
     {
         private readonly IFinanceDatabase financeDatabase = financeDatabase;
@@ -15,12 +17,12 @@
                 return;
             }
 
-            Console.WriteLine("ID\tНазвание\tБаланс");
-
+            ConsoleTable table = new("ID", "Название", "Баланс");
             foreach (var account in accounts)
             {
-                Console.WriteLine($"{account.Id}\t{account.Name}\t{account.Balance}");
+                table.AddRow(account.Id, account.Name, account.Balance);
             }
+            table.Write();
         }
     }
 }

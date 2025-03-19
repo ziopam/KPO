@@ -1,13 +1,13 @@
 ﻿namespace KR1.DomainObjects
 {
-    internal class Operation(int id, bool isIncome, int bankAccountId, decimal amount, DateTime date, int categoryId, string description = "")
+    internal class Operation(int id, bool isIncome, int bankAccountId, decimal amount, DateOnly date, int categoryId, string description = "")
     {
         public int Id { get; private set; } = id;
-        public bool IsStonks { get; private set; } = isIncome;
-        public int BankAccountId { get; private set; } = bankAccountId;
-        public decimal Amount { get; private set; } = amount;
-        public DateTime Date { get; private set; } = date;
-        public int CategoryId { get; private set; } = categoryId;
-        public string Description { get; private set; } = description;
+        public bool IsIncome { get; set; } = isIncome;
+        public int BankAccountId { get; set; } = bankAccountId;
+        public decimal Amount { get; set; } = amount;
+        public DateOnly Date { get; set; } = date;
+        public int CategoryId { get; set; } = categoryId;
+        public string Description { get; set; } = description;
     }
 }

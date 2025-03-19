@@ -1,6 +1,6 @@
 ﻿namespace KR1.Console_Interface.Commands
 {
-    using KR1.Console_Interface;
+    using KR1.Console_Interface.Menus;
 
     internal class FinalCommand(ICommand command, Menu menu) : ICommand
     {

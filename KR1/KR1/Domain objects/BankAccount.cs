@@ -1,8 +1,8 @@
 ﻿namespace KR1.DomainObjects
 {
-    internal class BankAccount(int id, string name, decimal balance)
+    internal class BankAccount(Int64 id, string name, decimal balance)
     {
-        public int Id { get; private set; } = id;
+        public Int64 Id { get; private set; } = id;
         public string Name { get; set; } = name;
         public decimal Balance { get; private set; } = balance;
 

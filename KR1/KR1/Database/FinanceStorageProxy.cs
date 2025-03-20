@@ -8,39 +8,40 @@ namespace KR1.Database
         private List<Category> _categories = [];
         private List<Operation> _operations = [];
 
+        private readonly FinanceDatabase _financeDatabase;
+
+        public FinanceStorageProxy(FinanceDatabase financeDatabase)
+        {
+            _financeDatabase = financeDatabase;
+            _accounts = (List<BankAccount>)_financeDatabase.GetAccounts();
+            _categories = (List<Category>)_financeDatabase.GetCategories();
+            _operations = (List<Operation>)_financeDatabase.GetOperations();
+        }
+
         public void AddAccount(string name, decimal balance)
         {
             ArgumentNullException.ThrowIfNull(name);
 
-            if (_accounts.Count == 0)
-            {
-                _accounts.Add(new BankAccount(1, name, balance));
-            }
-            else
-            {
-                _accounts.Add(new BankAccount(_accounts.Last().Id + 1, name, balance));
-            }
+            Int64 id = _financeDatabase.GetNextId("BankAccounts");
+            _financeDatabase.AddAccount(name, balance);
+            _accounts.Add(new BankAccount(id, name, balance));
         }
 
         public void AddCategory(string name, bool isIncome)
         {
             ArgumentNullException.ThrowIfNull(name);
 
-            if (_categories.Count == 0)
-            {
-                _categories.Add(new Category(1, name, isIncome));
-            }
-            else
-            {
-                _categories.Add(new Category(_categories.Last().Id + 1, name, isIncome));
-            }
+            Int64 id = _financeDatabase.GetNextId("Categories");
+            _financeDatabase.AddCategory(name, isIncome);
+            _categories.Add(new Category(id, name, isIncome));
         }
 
-        public void AddOperation(bool isIncome, int bankAccountId, decimal amount, DateOnly date, int categoryId, string description = "")
+        public void AddOperation(bool isIncome, Int64 bankAccountId, decimal amount, DateOnly date, Int64 categoryId, string description = "")
         {
             ArgumentNullException.ThrowIfNull(description);
 
-            int possible_id = _operations.Count == 0 ? 1 : _operations.Last().Id + 1;
+            Int64 id = _financeDatabase.GetNextId("Operations");
+            _financeDatabase.AddOperation(isIncome, bankAccountId, amount, date, categoryId, description);
 
             BankAccount? bankAccount = _accounts.Find(account => account.Id == bankAccountId) ?? throw new ArgumentException("Банка с переданным id не существует");
 
@@ -49,9 +50,8 @@ namespace KR1.Database
                 throw new ArgumentException("Категории с переданным id не существует");
             }
 
-
             bankAccount.UpdateBalance(isIncome ? amount : -amount);
-            _operations.Add(new Operation(possible_id, isIncome, bankAccountId, amount, date, categoryId, description));
+            _operations.Add(new Operation(id, isIncome, bankAccountId, amount, date, categoryId, description));
         }
 
         public IEnumerable<BankAccount> GetAccounts()
@@ -69,13 +69,14 @@ namespace KR1.Database
             return _operations;
         }
 
-        public void RemoveAccount(int accountId)
+        public void RemoveAccount(Int64 accountId)
         {
+            _financeDatabase.RemoveAccount(accountId);
             _accounts = _accounts.Where(account => account.Id != accountId).ToList();
             _operations = _operations.Where(operation => operation.BankAccountId != accountId).ToList();
         }
 
-        public void RemoveCategory(int categoryId)
+        public void RemoveCategory(Int64 categoryId)
         {
             Category? category = _categories.Find(category => category.Id == categoryId);
 
@@ -83,6 +84,8 @@ namespace KR1.Database
             {
                 return;
             }
+
+            _financeDatabase.RemoveCategory(categoryId);
 
             var operationsToRemove = _operations.Where(operation => operation.CategoryId == categoryId).ToList();
             foreach (var operation in operationsToRemove)
@@ -100,13 +103,15 @@ namespace KR1.Database
             _categories.Remove(category);
         }
 
-        public void RemoveOperation(int operationId)
+        public void RemoveOperation(Int64 operationId)
         {
             Operation? operation = _operations.Find(operation => operation.Id == operationId);
             if (operation == null)
             {
                 return;
             }
+
+            _financeDatabase.RemoveOperation(operationId);
 
             if (_categories.Find(category => category.Id == operation.CategoryId)?.IsIncome == true)
             {
@@ -119,18 +124,21 @@ namespace KR1.Database
             _operations.Remove(operation);
         }
 
-        public void UpdateAccountName(int accountId, string newName)
+        public void UpdateAccountName(Int64 accountId, string newName)
         {
             ArgumentNullException.ThrowIfNull(newName);
+
             BankAccount? account = _accounts.Find(account => account.Id == accountId);
             if (account == null)
             {
                 return;
             }
+
+            _financeDatabase.UpdateAccountName(accountId, newName);
             account.Name = newName;
         }
 
-        public void UpdateCategoryName(int categoryId, string newName)
+        public void UpdateCategoryName(Int64 categoryId, string newName)
         {
             ArgumentNullException.ThrowIfNull(newName);
             Category? category = _categories.Find(category => category.Id == categoryId);
@@ -138,10 +146,12 @@ namespace KR1.Database
             {
                 return;
             }
+
+            _financeDatabase.UpdateCategoryName(categoryId, newName);
             category.Name = newName;
         }
 
-        public void UpdateCategoryIsIncome(int categoryId, bool isIncome)
+        public void UpdateCategoryIsIncome(Int64 categoryId, bool isIncome)
         {
             Category? category = _categories.Find(category => category.Id == categoryId);
             if (category == null || category.IsIncome == isIncome)
@@ -149,6 +159,7 @@ namespace KR1.Database
                 return;
             }
 
+            _financeDatabase.UpdateCategoryIsIncome(categoryId, isIncome);
             category.IsIncome = isIncome;
 
             var operationsToUpdate = _operations.Where(operation => operation.CategoryId == categoryId).ToList();
@@ -166,7 +177,7 @@ namespace KR1.Database
             }
         }
 
-        public void UpdateOperationBankAccountId(int operationId, int newBankAccountId)
+        public void UpdateOperationBankAccountId(Int64 operationId, Int64 newBankAccountId)
         {
             Operation? operation = _operations.Find(operation => operation.Id == operationId);
             if (operation == null)
@@ -182,6 +193,8 @@ namespace KR1.Database
                 return;
             }
 
+            _financeDatabase.UpdateOperationBankAccountId(operationId, newBankAccountId);
+
             if (operation.IsIncome)
             {
                 oldAccount.UpdateBalance(-operation.Amount);
@@ -196,7 +209,7 @@ namespace KR1.Database
             operation.BankAccountId = newBankAccountId;
         }
 
-        public void UpdateOperationCategoryId(int operationId, int newCategoryId)
+        public void UpdateOperationCategoryId(Int64 operationId, Int64 newCategoryId)
         {
             Operation? operation = _operations.Find(operation => operation.Id == operationId);
             if (operation == null)
@@ -211,6 +224,8 @@ namespace KR1.Database
             {
                 return;
             }
+
+            _financeDatabase.UpdateOperationCategoryId(operationId, newCategoryId);
 
             if (oldCategory.IsIncome)
             {
@@ -234,7 +249,7 @@ namespace KR1.Database
             operation.IsIncome = newCategory.IsIncome;
         }
 
-        public void UpdateOperationAmount(int operationId, decimal newAmount)
+        public void UpdateOperationAmount(Int64 operationId, decimal newAmount)
         {
             if (newAmount <= 0)
             {
@@ -246,6 +261,8 @@ namespace KR1.Database
             {
                 return;
             }
+
+            _financeDatabase.UpdateOperationAmount(operationId, newAmount);
 
             BankAccount? account = _accounts.Find(account => account.Id == operation.BankAccountId);
 
@@ -261,7 +278,7 @@ namespace KR1.Database
             operation.Amount = newAmount;
         }
 
-        public void UpdateOperationDate(int operationId, DateOnly newDate)
+        public void UpdateOperationDate(Int64 operationId, DateOnly newDate)
         {
             Operation? operation = _operations.Find(operation => operation.Id == operationId);
             if (operation == null)
@@ -269,10 +286,11 @@ namespace KR1.Database
                 return;
             }
 
+            _financeDatabase.UpdateOperationDate(operationId, newDate);
             operation.Date = newDate;
         }
 
-        public void UpdateOperationDescription(int operationId, string newDescription)
+        public void UpdateOperationDescription(Int64 operationId, string newDescription)
         {
             ArgumentNullException.ThrowIfNull(newDescription);
 
@@ -281,6 +299,8 @@ namespace KR1.Database
             {
                 return;
             }
+
+            _financeDatabase.UpdateOperationDescription(operationId, newDescription);
             operation.Description = newDescription;
         }
     }

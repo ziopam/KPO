@@ -9,7 +9,7 @@ namespace KR1.Console_Interface.Commands
 
         public void Execute()
         {
-            var operations = financeDatabase.GetOperations().OrderBy(o => o.Date);
+            var operations = financeDatabase.GetOperations();
 
             if (!operations.Any())
             {

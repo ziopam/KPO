@@ -1,9 +1,9 @@
 ﻿namespace KR1.DomainObjects
 {
 
-    internal class Category(int id, string name, bool isIncome)
+    internal class Category(Int64 id, string name, bool isIncome)
     {
-        public int Id { get; private set; } = id;
+        public Int64 Id { get; private set; } = id;
         public bool IsIncome { get; set; } = isIncome;
         public string Name { get; set; } = name;
     }

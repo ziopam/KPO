@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiniDZ2.Application\MiniDZ2.Application.csproj" />
+    <ProjectReference Include="..\MiniDZ2.Domain\MiniDZ2.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

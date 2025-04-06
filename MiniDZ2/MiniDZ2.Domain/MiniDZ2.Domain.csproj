@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+	<publicsVisibleTo Include="MiniDZ2.Application" />
+	<publicsVisibleTo Include="MiniDZ2.Infrastructure" />
+	<publicsVisibleTo Include="MiniDZ2.Presentation" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.5.0" />
+  </ItemGroup>
 </Project>

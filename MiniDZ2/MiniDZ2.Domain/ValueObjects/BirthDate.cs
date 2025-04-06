@@ -1,6 +1,6 @@
 ﻿namespace MiniDZ2.Domain.ValueObjects
 {
-    internal record BirthDate
+    public record BirthDate
     {
         public DateTime Value { get; }
         public BirthDate(DateTime value)

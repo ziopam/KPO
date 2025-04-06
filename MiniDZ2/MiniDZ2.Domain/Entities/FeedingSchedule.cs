@@ -2,7 +2,7 @@
 
 namespace MiniDZ2.Domain.Entities
 {
-    internal class FeedingSchedule(Guid animalId, DateTime feedingTime, Food food)
+    public class FeedingSchedule(Guid animalId, DateTime feedingTime, Food food)
     {
         public Guid Id { get; private set; } = Guid.NewGuid();
         public Guid AnimalId { get; private set; } = animalId;

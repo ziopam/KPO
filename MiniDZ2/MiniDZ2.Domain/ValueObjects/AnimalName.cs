@@ -1,6 +1,6 @@
 ﻿namespace MiniDZ2.Domain.ValueObjects
 {
-    internal record AnimalName
+    public record AnimalName
     {
         public string Value { get; }
 

@@ -7,8 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MiniDZ2.Application\MiniDZ2.Application.csproj" />
     <ProjectReference Include="..\MiniDZ2.Domain\MiniDZ2.Domain.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<publicsVisibleTo Include="MiniDZ2.Application" />
+		<publicsVisibleTo Include="MiniDZ2.Presentation" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="MediatR" Version="12.5.0" />
+	</ItemGroup>
+	
 </Project>

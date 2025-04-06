@@ -1,6 +1,6 @@
 ﻿namespace MiniDZ2.Domain.ValueObjects
 {
-    internal record EnclosureType
+    public record EnclosureType
     {
         public static readonly EnclosureType forPredators = new("Для хищников");
         public static readonly EnclosureType forHerbivores = new("Для травоядных");

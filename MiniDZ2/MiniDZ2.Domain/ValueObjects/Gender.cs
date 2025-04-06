@@ -1,6 +1,6 @@
 ﻿namespace MiniDZ2.Domain.ValueObjects
 {
-    internal record Gender
+    public record Gender
     {
         public static readonly Gender Male = new("Самец");
         public static readonly Gender Female = new("Самка");

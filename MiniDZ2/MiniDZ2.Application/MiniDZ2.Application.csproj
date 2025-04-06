@@ -8,6 +8,19 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MiniDZ2.Domain\MiniDZ2.Domain.csproj" />
+    <ProjectReference Include="..\MiniDZ2.Infrastructure\MiniDZ2.Infrastructure.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.5.0" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<publicsVisibleTo Include="MiniDZ2.Presentation" />
+	</ItemGroup>
 
 </Project>

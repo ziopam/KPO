@@ -2,7 +2,7 @@
 
 namespace MiniDZ2.Domain.Entities
 {
-    internal class Enclosure(EnclosureType type, NoZeroPositiveInt size, NoZeroPositiveInt capacity)
+    public class Enclosure(EnclosureType type, NoZeroPositiveInt size, NoZeroPositiveInt capacity)
     {
         public Guid Id { get; private set; } = Guid.NewGuid();
         public EnclosureType Type { get; private set; } = type;
@@ -18,7 +18,7 @@ namespace MiniDZ2.Domain.Entities
                 return;
             }
 
-            if (AmountOfAnimals == Capacity.Value)
+            if (!HasAvaluablePlace())
             {
                 throw new InvalidOperationException("Невозможно добавить животное. Клетка полная");
             }
@@ -29,6 +29,11 @@ namespace MiniDZ2.Domain.Entities
         public void RemoveAnimal(Guid animalId)
         {
             AnimalIds.Remove(animalId);
+        }
+
+        public bool HasAvaluablePlace()
+        {
+            return AmountOfAnimals < Capacity.Value;
         }
 
         public void Clean()

@@ -1,6 +1,6 @@
 ﻿namespace MiniDZ2.Domain.ValueObjects
 {
-    internal record NoZeroPositiveInt
+    public record NoZeroPositiveInt
     {
         public int Value { get; }
 

@@ -17,7 +17,16 @@ namespace MiniDZ2
             builder.Services.AddMediatR(a => a.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
 
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                var baseDirectory = AppContext.BaseDirectory;
+
+                var domainXml = Path.Combine(baseDirectory, "MiniDZ2.Domain.xml");
+                var appXml = Path.Combine(baseDirectory, "MiniDZ2.Presentation.xml");
+
+                options.IncludeXmlComments(domainXml);
+                options.IncludeXmlComments(appXml);
+            });
 
             builder.Services.AddTransient<INotificationHandler<AnimalMovedEvent>, AnimalMovedEventHandler>();
             builder.Services.AddTransient<INotificationHandler<FeedingTimeEvent>, FeedingTimeEventHandler>();
@@ -25,9 +34,9 @@ namespace MiniDZ2
             builder.Services.AddControllers();
             builder.Services.AddOpenApi();
 
-            builder.Services.AddScoped<IAnimalRepository, AnimalRepository>();
-            builder.Services.AddScoped<IEnclosureRepository, EnclosureRepository>();
-            builder.Services.AddScoped<IFeedingScheduleRepository, FeedingScheduleRepository>();
+            builder.Services.AddSingleton<IAnimalRepository, AnimalRepository>();
+            builder.Services.AddSingleton<IEnclosureRepository, EnclosureRepository>();
+            builder.Services.AddSingleton<IFeedingScheduleRepository, FeedingScheduleRepository>();
 
             builder.Services.AddScoped<AnimalTransferService>();
             builder.Services.AddScoped<FeedingOrganizationService>();
@@ -35,11 +44,8 @@ namespace MiniDZ2
 
             var app = builder.Build();
 
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
             app.MapControllers();

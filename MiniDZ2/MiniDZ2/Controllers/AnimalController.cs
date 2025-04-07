@@ -1,17 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MiniDZ2.Application.DTOs;
 using MiniDZ2.Domain.Entities;
+using MiniDZ2.Domain.ValueObjects;
 using MiniDZ2.Infrastructure.Interfaces;
 
 namespace MiniDZ2.Presentation.Controllers
 {
+    /// <summary>
+    /// Контроллер для работы с животными.
+    /// </summary>
+    /// <param name="animalRepository">Репозиторий для работы с БД животных.</param>
     [Route("api/[controller]")]
     [ApiController]
     public class AnimalController(IAnimalRepository animalRepository) : ControllerBase
     {
         private readonly IAnimalRepository _animalRepository = animalRepository;
 
-        // GET api/animal
+        /// <summary>
+        /// Получает всех животных из репозитория.
+        /// </summary>
+        /// <returns>Список животных.</returns>
+        [ProducesResponseType(typeof(IEnumerable<Animal>), StatusCodes.Status200OK)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -19,7 +28,13 @@ namespace MiniDZ2.Presentation.Controllers
             return Ok(animals);
         }
 
-        // GET api/animal/{id}
+        /// <summary>
+        /// Получает животное по его уникальному идентификатору из репозитория.
+        /// </summary>
+        /// <param name="id">Уникальный идентификатор животного.</param>
+        /// <returns>Животное с указанным ID.</returns>
+        [ProducesResponseType(typeof(Animal), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -31,19 +46,28 @@ namespace MiniDZ2.Presentation.Controllers
             return Ok(animal);
         }
 
-        // POST api/animal
+        /// <summary>
+        /// Создает новое животное в репозитории.
+        /// </summary>
+        /// <response code="201">Животное успешно создано.</response>
+        /// <response code="400">Некорректные данные.</response>
+        [ProducesResponseType(typeof(Animal), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateAnimalDto animal)
+        public async Task<IActionResult> Create([FromBody] CreateAnimalDto data)
         {
+            Animal animal;
             try
             {
-                Animal animal1 = new Animal
+                animal = new()
                 {
-                    Id = Guid.NewGuid(),
-                    Name = animal.Name,
-                    Species = animal.Species,
-                    Age = animal.Age,
-                    EnclosureId = animal.EnclosureId
+                    Species = new Species(data.Species, data.IsDangerous),
+                    Name = new AnimalName(data.Name),
+                    BirthDate = new BirthDate(data.BirthDate),
+                    Gender = Gender.GetGenderByString(data.Gender),
+                    FavoriteFood = new Food(data.FavoriteFood),
+                    Status = Status.GetStatusByString(data.Status),
+                    IsHungry = data.IsHungry,
                 };
             }
             catch (ArgumentException ex)
@@ -55,7 +79,12 @@ namespace MiniDZ2.Presentation.Controllers
             return CreatedAtAction(nameof(GetById), new { id = animal.Id }, animal);
         }
 
-        // DELETE api/animal/{id}
+        /// <summary>
+        /// Удаляет животное из репозитория.
+        /// </summary>
+        /// <param name="id">Уникальный идентификатор животного.</param>
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {

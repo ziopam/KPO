@@ -26,12 +26,12 @@ namespace MiniDZ2.Domain.Entities
 
             if (!HasAvaluablePlace())
             {
-                throw new InvalidOperationException("Невозможно добавить животное. Клетка полная");
+                throw new InvalidOperationException("Невозможно добавить животное. Вольер полон.");
             }
 
             if (!IsEnclosureSuitable(animal))
             {
-                throw new InvalidOperationException("Невозможно добавить животное. Клетка не подходит по типу");
+                throw new InvalidOperationException("Невозможно добавить животное. Вольер не подходит по типу");
             }
 
             AnimalIds.Add(animal.Id);

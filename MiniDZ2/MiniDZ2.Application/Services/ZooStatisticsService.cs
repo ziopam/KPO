@@ -1,9 +1,10 @@
-﻿using MiniDZ2.Domain.ValueObjects;
+﻿using MiniDZ2.Application.Interfaces;
+using MiniDZ2.Domain.ValueObjects;
 using MiniDZ2.Infrastructure.Interfaces;
 
 namespace MiniDZ2.Application.Services
 {
-    public class ZooStatisticsService(IAnimalRepository animalRepo, IEnclosureRepository enclosureRepo, IFeedingScheduleRepository feedingScheduleRepo)
+    public class ZooStatisticsService(IAnimalRepository animalRepo, IEnclosureRepository enclosureRepo, IFeedingScheduleRepository feedingScheduleRepo) : IZooStatisticsSerivice
     {
         private readonly IAnimalRepository _animalRepo = animalRepo;
         private readonly IEnclosureRepository _enclosureRepo = enclosureRepo;

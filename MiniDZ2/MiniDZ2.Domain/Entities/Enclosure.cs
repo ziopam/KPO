@@ -2,18 +2,24 @@
 
 namespace MiniDZ2.Domain.Entities
 {
-    public class Enclosure(EnclosureType type, NoZeroPositiveInt size, NoZeroPositiveInt capacity)
+    /// <summary>
+    /// Класс, представляющий вольер в зоопарке.
+    /// </summary>
+    public class Enclosure
     {
+        /// <summary>
+        /// Уникальный идентификатор вольера.
+        /// </summary>
         public Guid Id { get; private set; } = Guid.NewGuid();
-        public EnclosureType Type { get; private set; } = type;
-        public NoZeroPositiveInt Size { get; private set; } = size;
+        public required EnclosureType Type { get; set; }
+        public required NoZeroPositiveInt Size { get; set; }
         public int AmountOfAnimals => AnimalIds.Count;
-        public NoZeroPositiveInt Capacity { get; private set; } = capacity;
-        public List<Guid> AnimalIds { get; private set; } = [];
+        public required NoZeroPositiveInt Capacity { get; init; }
+        public List<Guid> AnimalIds { get; } = [];
 
-        public void AddAnimal(Guid animalId)
+        public void AddAnimal(Animal animal)
         {
-            if (AnimalIds.Contains(animalId))
+            if (AnimalIds.Contains(animal.Id))
             {
                 return;
             }
@@ -23,7 +29,12 @@ namespace MiniDZ2.Domain.Entities
                 throw new InvalidOperationException("Невозможно добавить животное. Клетка полная");
             }
 
-            AnimalIds.Add(animalId);
+            if (!IsEnclosureSuitable(animal))
+            {
+                throw new InvalidOperationException("Невозможно добавить животное. Клетка не подходит по типу");
+            }
+
+            AnimalIds.Add(animal.Id);
         }
 
         public void RemoveAnimal(Guid animalId)
@@ -38,6 +49,21 @@ namespace MiniDZ2.Domain.Entities
 
         public void Clean()
         {
+        }
+
+        public bool IsEnclosureSuitable(Animal animal)
+        {
+            string Species = animal.Species.Value;
+            string EnclosureType = Type.Value;
+            var answer = Species switch
+            {
+                "Хищник" => EnclosureType == "Для хищников",
+                "Травоядное" => EnclosureType == "Для травоядных",
+                "Птица" => EnclosureType == "Для птиц",
+                "Рыба" => EnclosureType == "Для рыб",
+                _ => throw new ArgumentException("Неизвестный вид животного"),
+            };
+            return answer;
         }
     }
 }

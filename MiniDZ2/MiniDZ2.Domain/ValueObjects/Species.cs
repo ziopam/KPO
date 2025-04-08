@@ -5,32 +5,37 @@
     /// </summary>
     public record Species
     {
+        private static readonly List<string> species = new()
+        {
+            "Хищник",
+            "Травоядное",
+            "Рыба",
+            "Птица",
+        };
+
+        public static readonly Species Predator = new(species[0]);
+        public static readonly Species Herbivore = new(species[1]);
+        public static readonly Species Fish = new(species[2]);
+        public static readonly Species Bird = new(species[3]);
+
         /// <summary>
-        /// Вид животного.
+        /// Вид животного. Может быть только из списка: [Хищник, Травоядное, Рыба, Птица].
         /// </summary>
-        /// <example>Лев</example>
+        /// <example>Рыба</example>
         public string Value { get; }
 
-        /// <summary>
-        /// Опасен ли вид животного.
-        /// </summary>
-        /// <example>true</example>
-        public bool IsDangerous { get; }
+        private Species(string value) => Value = value;
 
-        /// <summary>
-        /// Создает новый вид животного.
-        /// </summary>
-        /// <param name="species">Вид животного.</param>
-        /// <param name="isDangerous">Опасно ли животное.</param>
-        /// <exception cref="ArgumentException">Происходит, если вид животного пустое.</exception>
-        public Species(string species, bool isDangerous)
+        public static Species GetSpeciesByString(string value)
         {
-            if (string.IsNullOrWhiteSpace(species))
+            return value switch
             {
-                throw new ArgumentException("Вид не может быть пустым");
-            }
-            Value = species;
-            IsDangerous = isDangerous;
+                "Хищник" => Predator,
+                "Травоядное" => Herbivore,
+                "Рыба" => Fish,
+                "Птица" => Bird,
+                _ => throw new ArgumentException($"Вид животного может быть только из этого списка: {string.Join(", ", species)}")
+            };
         }
     }
 }

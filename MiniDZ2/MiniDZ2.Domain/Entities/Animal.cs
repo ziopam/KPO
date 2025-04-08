@@ -18,7 +18,7 @@ namespace MiniDZ2.Domain.Entities
         public required Food FavoriteFood { get; set; }
         public required Status Status { get; set; }
         public required bool IsHungry { get; set; } = true;
-        public Guid EnclosureId { get; set; } = Guid.Empty;
+        public Guid EnclosureId { get; private set; } = Guid.Empty;
 
         /// <summary>
         /// Покормить животное.
@@ -43,6 +43,15 @@ namespace MiniDZ2.Domain.Entities
         public void MoveToEnclosure(Guid newEnclosureId)
         {
             EnclosureId = newEnclosureId;
+        }
+
+        /// <summary>
+        /// Проверяет, находится ли животное в клетке или нет.
+        /// </summary>
+        /// <returns>true - если животное в клетке, false - иначе</returns>
+        public bool IsInEnclosure()
+        {
+            return EnclosureId != Guid.Empty;
         }
     }
 }

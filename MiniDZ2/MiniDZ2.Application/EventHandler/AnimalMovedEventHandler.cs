@@ -9,7 +9,7 @@ namespace MiniDZ2.Application.EventHandler
         {
             return Task.Run(() =>
             {
-                Console.WriteLine($"Животное с ID {notification.AnimalId} было перемещено в вольер с ID {notification.FromEnclosureId} в {notification.ToEnclosureId}");
+                Console.WriteLine($"Животное с ID {notification.AnimalId} было перемещено из вольера с ID {notification.FromEnclosureId} в {notification.ToEnclosureId}");
             }, cancellationToken);
         }
     }

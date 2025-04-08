@@ -1,5 +1,6 @@
 using MediatR;
 using MiniDZ2.Application.EventHandler;
+using MiniDZ2.Application.Interfaces;
 using MiniDZ2.Application.Services;
 using MiniDZ2.Domain.Events;
 using MiniDZ2.Infrastructure.Interfaces;
@@ -38,7 +39,7 @@ namespace MiniDZ2
             builder.Services.AddSingleton<IEnclosureRepository, EnclosureRepository>();
             builder.Services.AddSingleton<IFeedingScheduleRepository, FeedingScheduleRepository>();
 
-            builder.Services.AddScoped<AnimalTransferService>();
+            builder.Services.AddScoped<IAnimalTransferService, AnimalTransferService>();
             builder.Services.AddScoped<FeedingOrganizationService>();
             builder.Services.AddScoped<ZooStatisticsService>();
 

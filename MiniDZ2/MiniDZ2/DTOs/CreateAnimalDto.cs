@@ -10,7 +10,7 @@ namespace MiniDZ2.Application.DTOs
         /// <summary>
         /// Название вида.
         /// </summary>
-        /// <example>Лев</example>
+        /// <example>Рыба</example>
         [Required]
         public required string Species { get; set; }
 
@@ -55,12 +55,5 @@ namespace MiniDZ2.Application.DTOs
         /// <example>true</example>
         [Required]
         public required bool IsHungry { get; set; }
-
-        /// <summary>
-        /// Опасное ли животное.
-        /// </summary>
-        /// <example>true</example>
-        [Required]
-        public required bool IsDangerous { get; set; }
     }
 }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MiniDZ2.Application.DTOs;
+using MiniDZ2.Application.Interfaces;
 using MiniDZ2.Domain.Entities;
 using MiniDZ2.Domain.ValueObjects;
 using MiniDZ2.Infrastructure.Interfaces;
+using MiniDZ2.Presentation.DTOs;
 
 namespace MiniDZ2.Presentation.Controllers
 {
@@ -10,9 +12,10 @@ namespace MiniDZ2.Presentation.Controllers
     /// Контроллер для работы с животными.
     /// </summary>
     /// <param name="animalRepository">Репозиторий для работы с БД животных.</param>
+    /// <param name="animalTransferService"></param>
     [Route("api/[controller]")]
     [ApiController]
-    public class AnimalController(IAnimalRepository animalRepository) : ControllerBase
+    public class AnimalController(IAnimalRepository animalRepository, IAnimalTransferService animalTransferService) : ControllerBase
     {
         private readonly IAnimalRepository _animalRepository = animalRepository;
 
@@ -61,7 +64,7 @@ namespace MiniDZ2.Presentation.Controllers
             {
                 animal = new()
                 {
-                    Species = new Species(data.Species, data.IsDangerous),
+                    Species = Species.GetSpeciesByString(data.Species),
                     Name = new AnimalName(data.Name),
                     BirthDate = new BirthDate(data.BirthDate),
                     Gender = Gender.GetGenderByString(data.Gender),
@@ -94,6 +97,33 @@ namespace MiniDZ2.Presentation.Controllers
                 return NotFound();
             }
             await _animalRepository.RemoveAsync(animal.Id);
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Перемещает животное в другой вольер.
+        /// </summary>
+        /// <response code="204">Животное успешно перемещено.</response>
+        /// <response code="400">Ошибка при перемещении животного. Вольер заполнен, вольер не подходит животному по типу или животное уже в вольере</response>
+        /// <response code="404">Животное или вальер не найдены.</response>
+        [HttpPatch("transfer")]
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> TransferAnimalToEnclosure([FromBody] TransferAnimalDto data)
+        {
+            try
+            {
+                await animalTransferService.MoveAnimalAsync(data.AnimalId, data.EnclosureId);
+            }
+            catch (ArgumentException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
             return NoContent();
         }
     }

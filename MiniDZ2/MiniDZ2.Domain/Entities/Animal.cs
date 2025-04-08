@@ -29,11 +29,27 @@ namespace MiniDZ2.Domain.Entities
         }
 
         /// <summary>
+        /// Помечает животное как голодное.
+        /// </summary>
+        public void MarkAsHungry()
+        {
+            IsHungry = true;
+        }
+
+        /// <summary>
         /// Исцелить животное.
         /// </summary>
         public void Heal()
         {
             Status = Status.Healthy;
+        }
+
+        /// <summary>
+        /// Помечает животное как больное.
+        /// </summary>
+        public void MarkAsSick()
+        {
+            Status = Status.Sick;
         }
 
         /// <summary>

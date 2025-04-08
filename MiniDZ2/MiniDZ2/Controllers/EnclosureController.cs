@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MiniDZ2.Application.Interfaces;
 using MiniDZ2.Domain.Entities;
 using MiniDZ2.Domain.ValueObjects;
 using MiniDZ2.Infrastructure.Interfaces;
@@ -11,7 +12,7 @@ namespace MiniDZ2.Presentation.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class EnclosureController(IEnclosureRepository enclosureRepository) : ControllerBase
+    public class EnclosureController(IEnclosureRepository enclosureRepository, IRemoveAnimalFromEnclosureService animalFromEnclosureService) : ControllerBase
     {
         private readonly IEnclosureRepository _enclosureRepository = enclosureRepository;
 
@@ -88,6 +89,11 @@ namespace MiniDZ2.Presentation.Controllers
             {
                 return NotFound();
             }
+
+            foreach (var animalId in enclosure.AnimalIds)
+            {
+                await animalFromEnclosureService.RemoveAnimalAsync(animalId, enclosure.Id);
+            }
             await _enclosureRepository.RemoveAsync(id);
             return NoContent();
         }
@@ -107,6 +113,42 @@ namespace MiniDZ2.Presentation.Controllers
                 return NotFound();
             }
             return Ok(enclosure);
+        }
+
+        /// <summary>
+        /// Отмечает вольер как чистый.
+        /// </summary>
+        /// <param name="id">Уникальный идентификатор вольера</param>
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+        [HttpPatch("clean/{id}")]
+        public async Task<IActionResult> Clean(Guid id)
+        {
+            var enclosure = await _enclosureRepository.GetByIdAsync(id);
+            if (enclosure == null)
+            {
+                return NotFound();
+            }
+            enclosure.Clean();
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Отмечает вольер как грязный.
+        /// </summary>
+        /// <param name="id">Уникальный идентификатор вольера</param>
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+        [HttpPatch("mark-as-dirty/{id}")]
+        public async Task<IActionResult> MarkAsDirty(Guid id)
+        {
+            var enclosure = await _enclosureRepository.GetByIdAsync(id);
+            if (enclosure == null)
+            {
+                return NotFound();
+            }
+            enclosure.MarkAsDirty();
+            return NoContent();
         }
     }
 }

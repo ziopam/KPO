@@ -13,9 +13,10 @@ namespace MiniDZ2.Presentation.Controllers
     /// </summary>
     /// <param name="animalRepository">Репозиторий для работы с БД животных.</param>
     /// <param name="animalTransferService"></param>
+    /// <param name="removeAnimalFromEnclosure"></param>
     [Route("api/[controller]")]
     [ApiController]
-    public class AnimalController(IAnimalRepository animalRepository, IAnimalTransferService animalTransferService) : ControllerBase
+    public class AnimalController(IAnimalRepository animalRepository, IAnimalTransferService animalTransferService, IRemoveAnimalFromEnclosureService removeAnimalFromEnclosure) : ControllerBase
     {
         private readonly IAnimalRepository _animalRepository = animalRepository;
 
@@ -96,6 +97,8 @@ namespace MiniDZ2.Presentation.Controllers
             {
                 return NotFound();
             }
+
+            await removeAnimalFromEnclosure.RemoveAnimalAsync(animal.Id, animal.EnclosureId);
             await _animalRepository.RemoveAsync(animal.Id);
             return NoContent();
         }
@@ -124,6 +127,83 @@ namespace MiniDZ2.Presentation.Controllers
             {
                 return BadRequest(ex.Message);
             }
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Отмечает животное как голодное.
+        /// </summary>
+        /// <param name="id">Уникальный идентификатор животного</param>
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+        [HttpPatch("mark-as-hungry/{id}")]
+        public async Task<IActionResult> MarkAsHungry(Guid id)
+        {
+            var animal = await _animalRepository.GetByIdAsync(id);
+            if (animal == null)
+            {
+                return NotFound();
+            }
+            animal.MarkAsHungry();
+            await _animalRepository.AddAsync(animal);
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Отмечает животное как сытое.
+        /// </summary>
+        /// <param name="id">Уникальный идентификатор животного.</param>
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+        [HttpPatch("feed/{id}")]
+        public async Task<IActionResult> FeedAnimal(Guid id)
+        {
+            var animal = await _animalRepository.GetByIdAsync(id);
+            if (animal == null)
+            {
+                return NotFound();
+            }
+            animal.Feed();
+            await _animalRepository.AddAsync(animal);
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Отмечает животное как больное.
+        /// </summary>
+        /// <param name="id">Уникальный идентификатор животного.</param>
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+        [HttpPatch("mark-as-sick/{id}")]
+        public async Task<IActionResult> MarkAsSick(Guid id)
+        {
+            var animal = await _animalRepository.GetByIdAsync(id);
+            if (animal == null)
+            {
+                return NotFound();
+            }
+            animal.MarkAsSick();
+            await _animalRepository.AddAsync(animal);
+            return NoContent();
+        }
+
+
+        /// <summary>
+        /// Отмечает животное как здоровое.
+        /// </summary>
+        /// <param name="id">Уникальный идентификатор животного.</param>
+        [ProducesResponseType(typeof(string), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(typeof(string), StatusCodes.Status404NotFound)]
+        [HttpPatch("heal-animal/{id}")]
+        public async Task<IActionResult> HealAnimal(Guid id)
+        {
+            var animal = await _animalRepository.GetByIdAsync(id);
+            if (animal == null)
+            {
+                return NotFound();
+            }
+            animal.Heal();
+            await _animalRepository.AddAsync(animal);
             return NoContent();
         }
     }

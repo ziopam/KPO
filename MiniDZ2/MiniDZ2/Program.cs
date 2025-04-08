@@ -42,6 +42,7 @@ namespace MiniDZ2
             builder.Services.AddScoped<IAnimalTransferService, AnimalTransferService>();
             builder.Services.AddScoped<FeedingOrganizationService>();
             builder.Services.AddScoped<IZooStatisticsSerivice, ZooStatisticsService>();
+            builder.Services.AddScoped<IRemoveAnimalFromEnclosureService, RemoveAnimalFromEnclosureService>();
 
             var app = builder.Build();
 

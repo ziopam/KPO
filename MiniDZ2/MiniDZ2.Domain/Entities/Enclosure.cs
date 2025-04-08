@@ -15,6 +15,7 @@ namespace MiniDZ2.Domain.Entities
         public required NoZeroPositiveInt Size { get; set; }
         public int AmountOfAnimals => AnimalIds.Count;
         public required NoZeroPositiveInt Capacity { get; init; }
+        public bool IsClean { get; private set; } = true;
         public List<Guid> AnimalIds { get; } = [];
 
         public void AddAnimal(Animal animal)
@@ -49,6 +50,12 @@ namespace MiniDZ2.Domain.Entities
 
         public void Clean()
         {
+            IsClean = true;
+        }
+
+        public void MarkAsDirty()
+        {
+            IsClean = false;
         }
 
         public bool IsEnclosureSuitable(Animal animal)

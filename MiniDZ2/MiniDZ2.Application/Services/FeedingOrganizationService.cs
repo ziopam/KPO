@@ -1,38 +1,29 @@
-﻿using MediatR;
-using MiniDZ2.Domain.Entities;
-using MiniDZ2.Domain.Events;
-using MiniDZ2.Domain.ValueObjects;
+﻿using MiniDZ2.Application.Interfaces;
 using MiniDZ2.Infrastructure.Interfaces;
 
 namespace MiniDZ2.Application.Services
 {
-    public class FeedingOrganizationService(IFeedingScheduleRepository feedingScheduleRepo, IAnimalRepository animalRepo, IMediator mediator)
+    public class FeedingOrganizationService(IFeedingScheduleRepository feedingScheduleRepo, IAnimalRepository animalRepo) : IFeedingOrganizationService
     {
         private readonly IFeedingScheduleRepository _feedingScheduleRepo = feedingScheduleRepo;
         private readonly IAnimalRepository _animalRepo = animalRepo;
-        private readonly IMediator _mediator = mediator;
 
-        public async Task AddFeedingScheduleAsync(Guid animalId, DateTime feedingTime, Food foodType)
+        public async void FeedAnimal(Guid animalId, Guid scheduleId)
         {
-            var _ = await _animalRepo.GetByIdAsync(animalId) ?? throw new ArgumentException("Животное не найдено");
+            var animal = await _animalRepo.GetByIdAsync(animalId);
+            var schedule = await _feedingScheduleRepo.GetByIdAsync(scheduleId);
 
-            var feedingSchedule = new FeedingSchedule(animalId, feedingTime, foodType);
-            await _feedingScheduleRepo.AddAsync(feedingSchedule);
+            if (animal == null)
+            {
+                throw new ArgumentException($"Животного с ID {animalId} не найдено.");
+            }
+            if (schedule == null)
+            {
+                throw new ArgumentException($"Расписания с ID {scheduleId} не найдено.");
+            }
 
-            var @event = new FeedingTimeEvent(animalId, feedingTime);
-            await _mediator.Publish(@event);
-        }
-
-        public async Task<IEnumerable<FeedingSchedule>> GetFeedingSchedulesForAnimalAsync(Guid animalId)
-        {
-            return await _feedingScheduleRepo.GetByAnimalIdAsync(animalId);
-        }
-
-        public async Task ChangeFeedingTimeAsync(Guid scheduleId, DateTime newFeedingTime)
-        {
-            var feedingSchedule = await _feedingScheduleRepo.GetByIdAsync(scheduleId)
-                ?? throw new ArgumentException("Расписание не найдено");
-            feedingSchedule.UpdateTime(newFeedingTime);
+            animal.Feed();
+            schedule.MarkAsCompleted();
         }
     }
 }

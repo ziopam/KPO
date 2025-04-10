@@ -13,10 +13,10 @@ namespace MiniDZ2.Presentation.Controllers
     /// </summary>
     /// <param name="animalRepository">Репозиторий для работы с БД животных.</param>
     /// <param name="animalTransferService"></param>
-    /// <param name="removeAnimalFromEnclosure"></param>
+    /// <param name="deleteAnimalService"></param>
     [Route("api/[controller]")]
     [ApiController]
-    public class AnimalController(IAnimalRepository animalRepository, IAnimalTransferService animalTransferService, IRemoveAnimalFromEnclosureService removeAnimalFromEnclosure) : ControllerBase
+    public class AnimalController(IAnimalRepository animalRepository, IAnimalTransferService animalTransferService, IDeleteAnimalService deleteAnimalService) : ControllerBase
     {
         private readonly IAnimalRepository _animalRepository = animalRepository;
 
@@ -98,8 +98,7 @@ namespace MiniDZ2.Presentation.Controllers
                 return NotFound();
             }
 
-            await removeAnimalFromEnclosure.RemoveAnimalAsync(animal.Id, animal.EnclosureId);
-            await _animalRepository.RemoveAsync(animal.Id);
+            deleteAnimalService.DeleteAnimal(id);
             return NoContent();
         }
 

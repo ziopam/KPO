@@ -2,9 +2,9 @@
 
 namespace MiniDZ2.Domain.Events
 {
-    public class FeedingTimeEvent(Guid animalId, DateTime time) : INotification
+    public class FeedingTimeEvent(Guid animalId, Guid scheduleId) : INotification
     {
         public Guid AnimalId { get; } = animalId;
-        public DateTime FeedingTime { get; } = time;
+        public Guid ScheduleId { get; } = scheduleId;
     }
 }

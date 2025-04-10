@@ -10,6 +10,6 @@ namespace MiniDZ2.Infrastructure.Interfaces
         Task RemoveAsync(Guid id);
 
         Task<IEnumerable<FeedingSchedule>> GetByAnimalIdAsync(Guid animalId);
-        Task<IEnumerable<FeedingSchedule>> GetByEnclosureIdAsync(Guid enclosureId);
+        Task<IEnumerable<FeedingSchedule>> GetByDate(DateOnly date);
     }
 }

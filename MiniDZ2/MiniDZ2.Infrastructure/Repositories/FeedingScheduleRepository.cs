@@ -26,19 +26,24 @@ namespace MiniDZ2.Infrastructure.Repositories
             return Task.FromResult<IEnumerable<FeedingSchedule>>(schedules);
         }
 
-        public Task<IEnumerable<FeedingSchedule>> GetByEnclosureIdAsync(Guid enclosureId)
+        public Task<IEnumerable<FeedingSchedule>> GetByDate(DateOnly date)
         {
-            throw new NotImplementedException();
+            var schedules = _feedingSchedules.Values
+                .Where(fs => fs.FeedingTime == date)
+                .ToList();
+            return Task.FromResult<IEnumerable<FeedingSchedule>>(schedules);
         }
 
         public Task<FeedingSchedule?> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var schedule = _feedingSchedules.TryGetValue(id, out var feedingSchedule) ? feedingSchedule : null;
+            return Task.FromResult<FeedingSchedule?>(schedule);
         }
 
         public Task RemoveAsync(Guid id)
         {
-            throw new NotImplementedException();
+            _feedingSchedules.TryRemove(id, out _);
+            return Task.CompletedTask;
         }
     }
 }

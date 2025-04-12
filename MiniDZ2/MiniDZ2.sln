@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniDZ2.Presentation", "MiniDZ2\MiniDZ2.Presentation.csproj", "{329C1A49-BDFD-4848-B881-80797B7981AB}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniDZ2.Application", "MiniDZ2.Application\MiniDZ2.Application.csproj", "{E41D5508-5DB1-492E-887F-CA9561907A91}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniDZ2.Infrastructure", "MiniDZ2.Infrastructure\MiniDZ2.Infrastructure.csproj", "{27517EAD-8E88-4107-9102-1C3DFE8A9B4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BECB4DDF-5380-43DB-935F-2CEA4F97B2B6}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

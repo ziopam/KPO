@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniDZ2.Tests", "MiniDZ2.Tests\MiniDZ2.Tests.csproj", "{D9B4B691-44EC-4CA0-8234-A9E0A09747AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{27517EAD-8E88-4107-9102-1C3DFE8A9B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27517EAD-8E88-4107-9102-1C3DFE8A9B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27517EAD-8E88-4107-9102-1C3DFE8A9B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9B4B691-44EC-4CA0-8234-A9E0A09747AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9B4B691-44EC-4CA0-8234-A9E0A09747AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9B4B691-44EC-4CA0-8234-A9E0A09747AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9B4B691-44EC-4CA0-8234-A9E0A09747AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

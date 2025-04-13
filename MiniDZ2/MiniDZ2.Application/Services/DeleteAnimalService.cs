@@ -9,7 +9,7 @@ namespace MiniDZ2.Application.Services
         private readonly IFeedingScheduleRepository _feedingScheduleRepository = feedingScheduleRepository;
         private readonly IRemoveAnimalFromEnclosureService _removeAnimalFromEnclosureService = removeAnimalFromEnclosureService;
 
-        public async void DeleteAnimal(Guid id)
+        public async Task DeleteAnimal(Guid id)
         {
             var animal = await _animalRepository.GetByIdAsync(id);
             if (animal == null)

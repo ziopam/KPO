@@ -2,6 +2,6 @@
 {
     public interface IDeleteAnimalService
     {
-        void DeleteAnimal(Guid id);
+        Task DeleteAnimal(Guid id);
     }
 }

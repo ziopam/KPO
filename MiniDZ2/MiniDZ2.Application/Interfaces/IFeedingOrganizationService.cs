@@ -2,6 +2,6 @@
 {
     public interface IFeedingOrganizationService
     {
-        void FeedAnimal(Guid animalId, Guid scheduleId);
+        Task FeedAnimal(Guid animalId, Guid scheduleId);
     }
 }

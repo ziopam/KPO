@@ -10,10 +10,10 @@ namespace MiniDZ2.Application.EventHandler
 
         public Task Handle(FeedingTimeEvent notification, CancellationToken cancellationToken)
         {
-            return Task.Run(() =>
+            return Task.Run(async () =>
             {
                 Console.WriteLine($"Настало время кормления для животного с ID {notification.AnimalId}, согласно расписанию с ID {notification.ScheduleId}");
-                _feedingOrganizationService.FeedAnimal(notification.AnimalId, notification.ScheduleId);
+                await _feedingOrganizationService.FeedAnimal(notification.AnimalId, notification.ScheduleId);
             }, cancellationToken);
         }
     }

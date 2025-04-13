@@ -8,7 +8,7 @@ namespace MiniDZ2.Application.Services
         private readonly IFeedingScheduleRepository _feedingScheduleRepo = feedingScheduleRepo;
         private readonly IAnimalRepository _animalRepo = animalRepo;
 
-        public async void FeedAnimal(Guid animalId, Guid scheduleId)
+        public async Task FeedAnimal(Guid animalId, Guid scheduleId)
         {
             var animal = await _animalRepo.GetByIdAsync(animalId);
             var schedule = await _feedingScheduleRepo.GetByIdAsync(scheduleId);

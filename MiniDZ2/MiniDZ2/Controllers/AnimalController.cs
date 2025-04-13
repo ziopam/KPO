@@ -98,7 +98,7 @@ namespace MiniDZ2.Presentation.Controllers
                 return NotFound();
             }
 
-            deleteAnimalService.DeleteAnimal(id);
+            await deleteAnimalService.DeleteAnimal(id);
             return NoContent();
         }
 

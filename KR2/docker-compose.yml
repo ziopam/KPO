@@ -1,0 +1,123 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build:
+      context: ./KR2.ApiGateway/KR2.ApiGateway
+      dockerfile: Dockerfile
+    ports:
+      - '8000:8080'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - FileStoringService__Url=http://file-storing-service:8080
+      - FileAnalysisService__Url=http://file-analysis-service:8080
+    depends_on:
+      file-storing-service:
+        condition: service_started
+      file-analysis-service:
+        condition: service_started
+    networks:
+      - kr2_network
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:8080/health']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+      
+  file-storing-service:
+    build:
+      context: ./KR2.FileStoringService/KR2.FileStoringService
+      dockerfile: Dockerfile
+    ports:
+      - '8001:8080'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__FileStoringDb=Host=file-storing-db;Port=5432;Database=filestoring;Username=postgres;Password=postgrespassword
+      - FileStorage__BasePath=/app/FileStorage
+    depends_on:
+      file-storing-db:
+        condition: service_healthy
+    networks:
+      - kr2_network
+    volumes:
+      - file_storage:/app/FileStorage
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:8080/health']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+      
+  file-analysis-service:
+    build:
+      context: ./KR2.FileAnalysisService/KR2.FileAnalysisService
+      dockerfile: Dockerfile
+    ports:
+      - '8002:8080'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__FileAnalysisDb=Host=file-analysis-db;Port=5432;Database=fileanalysis;Username=postgres;Password=postgrespassword
+      - FileStoringService__Url=http://file-storing-service:8080
+      - WordCloudStorage__BasePath=/app/WordCloudStorage
+    depends_on:
+      file-analysis-db:
+        condition: service_healthy
+      file-storing-service:
+        condition: service_started
+    networks:
+      - kr2_network
+    volumes:
+      - word_cloud_storage:/app/WordCloudStorage
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:8080/health']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+      
+  file-storing-db:
+    image: postgres:14
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgrespassword
+      - POSTGRES_DB=filestoring
+    volumes:
+      - file_storing_db_data:/var/lib/postgresql/data
+    networks:
+      - kr2_network
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      
+  file-analysis-db:
+    image: postgres:14
+    ports:
+      - '5433:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgrespassword
+      - POSTGRES_DB=fileanalysis
+    volumes:
+      - file_analysis_db_data:/var/lib/postgresql/data
+    networks:
+      - kr2_network
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+networks:
+  kr2_network:
+    driver: bridge
+
+volumes:
+  file_storing_db_data:
+  file_analysis_db_data:
+  file_storage:
+  word_cloud_storage:

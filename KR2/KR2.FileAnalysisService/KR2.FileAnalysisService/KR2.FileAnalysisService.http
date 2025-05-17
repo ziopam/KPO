@@ -1,0 +1,6 @@
+@KR2.FileAnalysisService_HostAddress = http://localhost:5277
+
+GET {{KR2.FileAnalysisService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

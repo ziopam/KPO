@@ -1,0 +1,80 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KR2.ApiGateway", "KR2.ApiGateway", "{C97BC4A0-1D0E-FE20-1017-2804885EB353}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KR2.ApiGateway", "KR2.ApiGateway\KR2.ApiGateway\KR2.ApiGateway.csproj", "{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KR2.FileStoringService", "KR2.FileStoringService", "{52684914-1277-3B11-C853-685537AB6FE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KR2.FileStoringService", "KR2.FileStoringService\KR2.FileStoringService\KR2.FileStoringService.csproj", "{14F526B5-C172-4F8B-9650-93C412008D47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "KR2.FileAnalysisService", "KR2.FileAnalysisService", "{16A16B8B-DA97-1C38-77B1-B4EC05F01D89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KR2.FileAnalysisService", "KR2.FileAnalysisService\KR2.FileAnalysisService\KR2.FileAnalysisService.csproj", "{531C240E-F950-414D-99FC-9BF5594C9858}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Debug|x64.Build.0 = Debug|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Debug|x86.Build.0 = Debug|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Release|x64.ActiveCfg = Release|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Release|x64.Build.0 = Release|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Release|x86.ActiveCfg = Release|Any CPU
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1}.Release|x86.Build.0 = Release|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Debug|x64.Build.0 = Debug|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Debug|x86.Build.0 = Debug|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Release|x64.ActiveCfg = Release|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Release|x64.Build.0 = Release|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Release|x86.ActiveCfg = Release|Any CPU
+		{14F526B5-C172-4F8B-9650-93C412008D47}.Release|x86.Build.0 = Release|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Debug|x64.Build.0 = Debug|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Debug|x86.Build.0 = Debug|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Release|x64.ActiveCfg = Release|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Release|x64.Build.0 = Release|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Release|x86.ActiveCfg = Release|Any CPU
+		{531C240E-F950-414D-99FC-9BF5594C9858}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50DFE450-DBE6-4397-9F80-5D85DB81E8E1} = {C97BC4A0-1D0E-FE20-1017-2804885EB353}
+		{14F526B5-C172-4F8B-9650-93C412008D47} = {52684914-1277-3B11-C853-685537AB6FE8}
+		{531C240E-F950-414D-99FC-9BF5594C9858} = {16A16B8B-DA97-1C38-77B1-B4EC05F01D89}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CD4934EA-5E4F-4356-8BD4-FDDE2086BF9B}
+	EndGlobalSection
+EndGlobal

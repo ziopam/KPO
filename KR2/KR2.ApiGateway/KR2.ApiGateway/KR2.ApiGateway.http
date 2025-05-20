@@ -1,0 +1,6 @@
+@KR2.ApiGateway_HostAddress = http://localhost:5103
+
+GET {{KR2.ApiGateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

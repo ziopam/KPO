@@ -1,0 +1,120 @@
+version: '3.8'
+
+services:
+  apigateway:
+    image: kr3-apigateway
+    build:
+      context: .
+      dockerfile: KR3.ApiGateway/Dockerfile
+    ports:
+      - "5002:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerDevelopment
+      - ASPNETCORE_URLS=http://+:8080
+    depends_on:
+      orderservice:
+        condition: service_started
+      paymentservice:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD", "dotnet", "--info" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    networks:
+      - kr3-network
+  orderservice:
+    image: kr3-orderservice
+    build:
+      context: .
+      dockerfile: KR3.OrderService/Dockerfile
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__OrdersDb=Server=sqlserver;Database=OrdersDb;User Id=sa;Password=Password123!;TrustServerCertificate=True
+      - MessageBus__Host=rabbitmq
+    depends_on:
+      rabbitmq:
+        condition: service_started
+      sqlserver:
+        condition: service_started
+    restart: on-failure
+    networks:
+      - kr3-network
+  paymentservice:
+    image: kr3-paymentservice
+    build:
+      context: .
+      dockerfile: KR3.PaymentService/Dockerfile
+    ports:
+      - "5001:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=DockerDevelopment
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__PaymentsDb=Server=sqlserver;Database=PaymentsDb;User Id=sa;Password=Password123!;TrustServerCertificate=True;Connection Timeout=30;
+      - MessageBus__Host=rabbitmq
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      sqlserver:
+        condition: service_started
+    restart: on-failure
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/health" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - kr3-network
+  sqlserver:
+    build:
+      context: .
+      dockerfile: sqlserver.Dockerfile
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password123!
+      - MSSQL_PID=Express
+      - MSSQL_TCP_PORT=1433
+    ports:
+      - "1433:1433"
+    command: /opt/mssql/bin/sqlservr
+    healthcheck:
+      test: bash -c '/opt/mssql-tools/bin/sqlcmd -S localhost,1433 -U sa -P "Password123!" -Q "SELECT 1" || exit 1'
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+    networks:
+      - kr3-network
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    healthcheck:
+      test: [ "CMD", "rabbitmq-diagnostics", "check_port_connectivity" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+    networks:
+      - kr3-network
+
+volumes:
+  sqlserver-data:
+  rabbitmq-data:
+
+
+networks:
+  kr3-network:
+    driver: bridge

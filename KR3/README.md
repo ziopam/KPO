@@ -115,9 +115,9 @@ public enum OrderStatus
 
 ### Swagger документация
 Доступна по адресам:
-- API Gateway: `http://localhost:5000/swagger`
-- Order Service: `http://localhost:5001/swagger`
-- Payment Service: `http://localhost:5002/swagger`
+- Order Service: `http://localhost:5000/swagger`
+- Payment Service: `http://localhost:5001/swagger`
+- API Gateway: `http://localhost:5002/swagger`
 
 P.s не смотря на то, что swagger доступен для всех микросервисов, понятно, что изначально предполагается, что пользователь работает с Api Gateway.
 
